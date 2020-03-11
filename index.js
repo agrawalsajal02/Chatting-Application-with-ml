@@ -60,7 +60,7 @@ io.on("connection", function (socket) {
 
 })
 
-http.listen(5000, function () {
+http.listen(1234, function () {
     //after server is creater it tell whether server is created or not
-    console.log("Server is created with port 5000");
+    console.log("Server is created with port 1234");
 })
