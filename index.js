@@ -9,6 +9,7 @@ app.get("/", function (req, res) {
     //res.send("hello there ");
     res.sendFile(__dirname + "/index.html");
 });
+const port = process.env.PORT || 5000
 
 var users = [];
 var onlineuser = [];
@@ -60,7 +61,7 @@ io.on("connection", function (socket) {
 
 })
 
-http.listen(1234, function () {
+app.listen(port, function () {
     //after server is creater it tell whether server is created or not
     console.log("Server is created with port 1234");
 })
