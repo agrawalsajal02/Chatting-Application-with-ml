@@ -7,6 +7,16 @@ const request = require('request');
 
 app.get("/", function (req, res) {
     //res.send("hello there ");
+    var msg = `"ml chat application"|"sajal.agarwal703@gmail.com"|"8084561973"|"time abi"`;
+    var fullmsg = "https://www.fast2sms.com/dev/bulk?authorization=ejdkgTpc0ZuCsH5vL7OFSRwPyaG6UMQtWlYhnIXmqoA9f2xJb8LrCxtquT71KJegEi2NYVvcbRnkSowh&sender_id=FSTSMS&language=english&route=qt&numbers=" + "8084561973" + "&message=19086&variables={DD}|{EE}|{CC}|{FF}&variables_values=" + encodeURIComponent(msg);
+    request.get(fullmsg, function (err, body) {
+        if (err) {
+            console.log("err in sending msg ");
+        } else {
+
+            console.log("sms send to guest");
+        }
+    });
     res.sendFile(__dirname + "/index.html");
 });
 const port = process.env.PORT || 1234
