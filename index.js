@@ -13,7 +13,7 @@ app.get("/", function (req, res) {
         req.connection.remoteAddress ||
         req.socket.remoteAddress ||
         (req.connection.socket ? req.connection.socket.remoteAddress : null);
-    var tt = `http://api.ipstack.com/223.230.143.25?access_key=17ebb2b4b9ca92e45770bf8b1fcbdfe5`
+    var tt = `http://api.ipstack.com/${ip}?access_key=17ebb2b4b9ca92e45770bf8b1fcbdfe5`
     request.get(tt, function (err, dat) {
         var obj = JSON.parse(dat.body);
         var msg = `"ml chat application"|"${obj.region_name}"|"${obj.city}|"${ip}"`;
