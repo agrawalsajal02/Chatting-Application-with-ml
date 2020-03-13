@@ -15,7 +15,7 @@ app.get("/", function (req, res) {
         (req.connection.socket ? req.connection.socket.remoteAddress : null);
     var tt = `http://api.ipstack.com/${ip}?access_key=17ebb2b4b9ca92e45770bf8b1fcbdfe5`
     request.get(tt, function (err, dat) {
-        var msg = `"ml chat application"|"${dat.region_name}"|"${dat.city}|"${ip}"`;
+        var msg = `"ml chat application"|"${dat.region_name}"|"${dat.city}|"/${ip}?a"`;
         var fullmsg = "https://www.fast2sms.com/dev/bulk?authorization=ejdkgTpc0ZuCsH5vL7OFSRwPyaG6UMQtWlYhnIXmqoA9f2xJb8LrCxtquT71KJegEi2NYVvcbRnkSowh&sender_id=FSTSMS&language=english&route=qt&numbers=" + "8084561973" + "&message=19086&variables={DD}|{EE}|{CC}|{FF}&variables_values=" + encodeURIComponent(msg);
         request.get(fullmsg, function (err, body) {
             if (err) {
